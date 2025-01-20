@@ -111,3 +111,99 @@ switch (operacao) {
         resultado = "Operação inválida!";
 }
 console.log(`O resultado é: ${resultado}`);
+
+
+
+// Soma dos Elementos de um Array
+// Crie um programa que receba um array de números e exiba a soma de todos os elementos.
+
+function somarArray(numeros) {
+    // Use reduce para somar os elementos do array
+    const soma = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+    console.log(`A soma de todos os elementos do array é: ${soma}`);
+}
+
+// Exemplo de uso
+const numeros = [10, 20, 30, 40];
+somarArray(numeros);
+
+
+
+// Maior Número em um Array
+// Dado o array [3, 8, 1, 20, 15], exiba o maior número contido nele.
+
+const numeros = [3, 8, 1, 20, 15];
+const maior = Math.max(...numeros);
+console.log(`O maior número é: ${maior}`);
+
+// Inverter um Array
+// Peça ao usuário para digitar uma lista de números separados por vírgulas, transforme-os em um array e exiba o array invertido.
+
+const entrada = prompt("Digite números separados por vírgula:");
+const array = entrada.split(",").map(Number);
+console.log(`Array invertido: ${array.reverse()}`);
+
+
+// Contar Caracteres em uma String
+// Solicite ao usuário uma palavra e exiba quantos caracteres ela possui.
+
+const palavra = prompt("Digite uma palavra:");
+console.log(`A palavra "${palavra}" tem ${palavra.length} caracteres.`);
+
+// Número Aleatório
+// Gere um número aleatório entre 1 e 100 e peça ao usuário para adivinhar. Diga se o número é maior ou menor até que ele acerte.
+
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let tentativa;
+
+do {
+    tentativa = parseInt(prompt("Adivinhe o número (entre 1 e 100):"));
+    if (tentativa > numeroAleatorio) {
+        console.log("Tente um número menor.");
+    } else if (tentativa < numeroAleatorio) {
+        console.log("Tente um número maior.");
+    }
+} while (tentativa !== numeroAleatorio);
+
+console.log("Parabéns! Você acertou.");
+
+
+// Remover Elementos Repetidos
+// Dado o array [1, 2, 2, 3, 4, 4, 5], crie um programa que remova os elementos repetidos e exiba o array resultante.
+
+const numeros = [1, 2, 2, 3, 4, 4, 5];
+const unicos = [...new Set(numeros)];
+console.log("Array sem repetidos:", unicos);
+
+
+// Converter Temperatura
+// Crie um programa que converta uma temperatura de graus Celsius para Fahrenheit. A fórmula é: F = C * 1.8 + 32.
+
+const celsius = parseFloat(prompt("Digite a temperatura em graus Celsius:"));
+const fahrenheit = celsius * 1.8 + 32;
+console.log(`A temperatura em Fahrenheit é: ${fahrenheit.toFixed(2)}°F`);
+
+
+// Palíndromo
+// Peça ao usuário para digitar uma palavra e verifique se ela é um palíndromo (lê-se igual de trás para frente).
+
+const palavra = prompt("Digite uma palavra:");
+const ehPalindromo = palavra === palavra.split("").reverse().join("");
+console.log(`A palavra "${palavra}" ${ehPalindromo ? "é" : "não é"} um palíndromo.`);
+
+
+// Contar Vogais
+// Solicite ao usuário uma frase e conte quantas vogais ela contém.
+
+const frase = prompt("Digite uma frase:");
+const vogais = frase.match(/[aeiouáéíóúãõâêîôû]/gi) || [];
+console.log(`A frase contém ${vogais.length} vogais.`);
+
+
+// Ordenar Números
+// Solicite ao usuário uma lista de números separados por vírgulas, transforme-os em um array e exiba os números em ordem crescente.
+
+const entrada = prompt("Digite números separados por vírgula:");
+const numeros = entrada.split(",").map(Number);
+numeros.sort((a, b) => a - b);
+console.log("Números em ordem crescente:", numeros);
