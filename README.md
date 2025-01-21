@@ -1,2 +1,2 @@
 # estudosJS
-alguns estudos de Java Script
+alguns exercicios de java script resolvidos.
